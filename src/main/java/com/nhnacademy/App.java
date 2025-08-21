@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -16,12 +16,11 @@ import com.nhnacademy.thread.AlertDaemon;
 import com.nhnacademy.thread.Counter;
 
 /**
- * Hello world!
- *
+ * 데몬 스레드와 일반 스레드를 활용한 애플리케이션 메인 클래스
  */
 public class App {
     public static void main(String[] args) {
-        //TODO#5 - AlertDaemon Thread를 초기화하고 start() 메서드를 호출해서 실행 합니다.
+        //TODO#5 - AlertDaemon 스레드 객체를 생성하고 start() 메서드를 호출하여 실행합니다.
         AlertDaemon alertDaemon = null;
 
         Thread.currentThread().setName("my-thread");

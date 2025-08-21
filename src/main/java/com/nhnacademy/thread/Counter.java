@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -14,6 +14,9 @@ package com.nhnacademy.thread;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 지정된 최대값까지 카운트를 증가시키는 카운터 클래스
+ */
 @Slf4j
 public class Counter {
     private final long countMaxSize;
