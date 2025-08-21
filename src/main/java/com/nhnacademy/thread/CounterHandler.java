@@ -16,16 +16,24 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CounterHandler implements Runnable  {
+    /** 스레드 동기화를 위한 모니터 객체 */
     private final Object monitor;
     private final long countMaxSize;
 
     private long count;
 
+    /**
+     * CounterHandler 객체를 초기화합니다.
+     *
+     * @param countMaxSize 카운터의 최대값
+     * @param monitor 스레드 동기화를 위한 모니터 객체
+     * @throws IllegalArgumentException 최대값이 0 이하이거나 모니터가 null인 경우
+     */
     public CounterHandler(long countMaxSize, Object monitor) {
-        //TODO#4 countMaxSize<=0 or monitor 객체가 null 이면 IllegalArgumentException이 발생 합니다.
+        //TODO#4 countMaxSize가 0 이하이거나 monitor 객체가 null이면 IllegalArgumentException을 발생시킵니다.
 
 
-        //TODO#5  countMaxSize, count, monitor 변수를 초기화 합니다.
+        //TODO#5 countMaxSize, count, monitor 변수를 초기화합니다.
 
     }
 
