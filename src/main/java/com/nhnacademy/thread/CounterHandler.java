@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -14,21 +14,38 @@ package com.nhnacademy.thread;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 일정 시간 간격으로 카운트를 증가시키며 실행 상태를 로깅하는 Runnable 구현체
+ * 여러 스레드에서 공유하여 사용할 수 있습니다.
+ */
 @Slf4j
 public class CounterHandler implements Runnable  {
+    /** 카운터가 도달할 최대값 */
     private final long countMaxSize;
 
+    /** 현재 카운트 값 */
     private long count;
 
+    /**
+     * CounterHandler 객체를 초기화합니다.
+     *
+     * @param countMaxSize 카운터의 최대값
+     * @throws IllegalArgumentException countMaxSize가 0 이하인 경우
+     */
     public CounterHandler(long countMaxSize) {
         if(countMaxSize<=0){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("카운트 최대값은 양수여야 합니다.");
         }
 
         this.countMaxSize = countMaxSize;
-        this.count=0l;
+        this.count = 0L;
     }
 
+    /**
+     * 1초 간격으로 카운트를 증가시키고 현재 스레드 정보와 카운트 값을 로그로 출력합니다.
+     * 카운트가 지정된 최대값에 도달할 때까지 실행됩니다.
+     * 로그에는 스레드 이름, 스레드 상태, 현재 카운트 값이 포함됩니다.
+     */
     @Override
     public void run() {
 
@@ -36,10 +53,10 @@ public class CounterHandler implements Runnable  {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException("카운터 스레드가 중단되었습니다.", e);
             }
             count++;
-            log.debug("thread:{},state:{},count:{}",Thread.currentThread().getName(), Thread.currentThread().getState(),count);
+            log.debug("thread: {}, state: {}, count: {}", Thread.currentThread().getName(), Thread.currentThread().getState(), count);
         }while (count<countMaxSize);
     }
 }
