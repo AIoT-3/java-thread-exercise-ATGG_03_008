@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -25,19 +25,34 @@ public class SharedCounter {
         this.count = count;
     }
 
-    //TODO#1-2 mehtod 단위 lock을 걸고, count 를 반환 합니다.
-    public long getCount(){
+    /**
+     * 현재 카운트 값을 반환합니다.
+     *
+     * @return 현재 카운트 값
+     */
+    //TODO#1-2 메소드 단위로 락을 걸고, count를 반환합니다.
+    public long getCount() {
         return count;
     }
 
-    public long increaseAndGet(){
-        //TODO#1-3 block 단위로 lock을 걸고 count = count + 1 증가시키고 count를 반환 합니다.
+            /**
+             * 카운트 값을 1 증가시키고 증가된 값을 반환합니다.
+             *
+             * @return 증가된 카운트 값
+             */
+            public long increaseAndGet() {
+        //TODO#1-3 블록 단위로 락을 걸고 카운트를 1 증가시킨 후(count = count + 1) 증가된 값을 반환합니다.
         count = count + 1;
         return count;
     }
 
-    public long decreaseAndGet(){
-        //TODO#1-4 count = count -1  부분 lock을 걸고, count를 반환 합니다.
+            /**
+             * 카운트 값을 1 감소시키고 감소된 값을 반환합니다.
+             *
+             * @return 감소된 카운트 값
+             */
+            public long decreaseAndGet() {
+        //TODO#1-4 카운트 감소 연산(count = count - 1) 부분에만 락을 걸고, 감소된 값을 반환합니다.
         count = count - 1;
         return count;
     }
