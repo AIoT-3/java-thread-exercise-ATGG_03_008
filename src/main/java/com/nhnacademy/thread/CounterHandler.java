@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -14,15 +14,18 @@ package com.nhnacademy.thread;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 일정 시간 간격으로 카운트를 증가시키는 Runnable 구현체
+ */
 @Slf4j
-//TODO#1 Runnable interface을 implements(구현) 합니다.
+//TODO#1 Runnable 인터페이스를 구현하도록 수정합니다.
 public class CounterHandler {
     private final long countMaxSize;
 
     private long count;
 
     public CounterHandler(long countMaxSize) {
-        //TODO#2 countMaxSize <=0 이면 IllegalArgumentException()이 발생 합니다.
+        //TODO#2 countMaxSize가 0 이하인 경우 IllegalArgumentException을 발생시킵니다.
 
 
         this.countMaxSize = countMaxSize;
@@ -31,10 +34,11 @@ public class CounterHandler {
 
     @Override
     public void run() {
-        /* TODO#3 run method를 구현 합니다.
-             - 1초에 한 번식 다음과 같이 출력 됩니다.
-             - count 1 ~ 10 까지 출력 됩니다.
-            ex) thread:my-thread,count:1 ....
+                 /* TODO#3 run 메소드 구현:
+             1. 1초 간격으로 카운트를 증가시키고 로그를 출력합니다.
+             2. 카운트는 1부터 countMaxSize(10)까지 증가합니다.
+             3. 출력 형식: "thread:[스레드명], count:[카운트값]"
+                예시: "thread:my-thread, count:1"
          */
 
         do {
