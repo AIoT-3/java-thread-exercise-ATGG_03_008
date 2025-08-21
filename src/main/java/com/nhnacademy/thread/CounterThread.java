@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -16,17 +16,20 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
 
+/**
+ * 주어진 최대값까지 카운트를 증가시키는 스레드 클래스
+ */
 @Slf4j
-//TODO#1 CounterThread는 Thread를 상속 합니다.
+//TODO#1 CounterThread 클래스가 Thread 클래스를 상속하도록 수정합니다.
 public class CounterThread {
     private final long countMaxSize;
 
     private long count;
 
     public CounterThread(String name, long countMaxSize) {
-        //TODO#2 name <-- null 이거나 공백 문자열이면 IllegalArgumentException이 발생 합니다.
+        //TODO#2 name이 null이거나 공백 문자열인 경우 IllegalArgumentException을 발생시킵니다.
 
-        //TODO#3 countMaxSize <=0 이면 IllegalArgumentException이 발생 합니다.
+        //TODO#3 countMaxSize가 0 이하인 경우 IllegalArgumentException을 발생시킵니다.
 
 
         this.setName(name);
@@ -37,12 +40,12 @@ public class CounterThread {
     @Override
     public void run() {
 
-        /*TODO#4 run method를 구현 합니다.
-            1초에 한 번식 다음과 같이 출력 됩니다.
-            - Thread.sleep(1000)을 사용하세요.
-            ex) thread:my-thread, count:1
-            - count : 1~10 까지 출력 됩니다.
-            - thread name : this.getName()<- 호출, CounterThread 가 Thread를 extends 하고 있음.
+                 /*TODO#4 run 메소드 구현:
+            1. 1초 간격으로 카운트를 증가시키고 로그를 출력합니다(Thread.sleep(1000) 사용).
+            2. 출력 형식: "thread:[스레드명], count:[카운트값]"
+               예시: "thread:my-thread, count:1"
+            3. 카운트는 1부터 countMaxSize까지 증가합니다.
+            4. 스레드 이름은 this.getName()으로 가져옵니다(Thread 클래스 상속).
          */
 
         do {

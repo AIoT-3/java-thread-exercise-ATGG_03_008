@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -14,15 +14,18 @@ package com.nhnacademy;
 
 import com.nhnacademy.thread.CounterThread;
 
+/**
+ * 카운터 스레드를 실행하는 메인 애플리케이션 클래스
+ */
 public class App
 {
     public static void main( String[] args )
     {
-        //TODO#5 CounterThread 객체를 생성 합니다.
-        // thread-name :  my-counter, countMaxSize :10
+        //TODO#5 CounterThread 객체를 생성합니다.
+        // 스레드 이름: "my-counter", 최대 카운트 값: 10
         CounterThread counterThread;
 
-        //TODO#6 counterThread를 시작 합니다.
+        //TODO#6 counterThread의 start() 메소드를 호출하여 스레드를 실행합니다.
 
     }
 }
