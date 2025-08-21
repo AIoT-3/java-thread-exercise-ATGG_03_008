@@ -33,7 +33,7 @@ public class App
         //TODO#1 counterHandlerA 객체를 생성합니다. 최대 카운트 값(countMaxSize)을 10으로 설정합니다.
         CounterHandler counterHandlerA;
         //TODO#2 threadA 생성 시 counterHandlerA 객체를 생성자 매개변수로 전달합니다.
-        Thread threadA;
+        Thread threadA = null;
         //TODO#3 threadA의 이름을 'my-counter-A'로 설정합니다.
 
         log.debug("threadA 상태: {}", threadA.getState());
@@ -42,7 +42,7 @@ public class App
         //TODO#4 counterHandlerB 객체를 생성합니다. 최대 카운트 값(countMaxSize)을 10으로 설정합니다.
         CounterHandler counterHandlerB;
         //TODO#5 threadB 생성 시 counterHandlerB 객체를 생성자 매개변수로 전달합니다.
-        Thread threadB;
+        Thread threadB = null;
         //TODO#6 threadB의 이름을 'my-counter-B'로 설정합니다.
 
         log.debug("threadB 상태: {}", threadB.getState());
