@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -12,35 +12,64 @@
 
 package com.nhnacademy.count;
 
+/**
+ * 여러 스레드에서 공유하여 사용하는 카운터 클래스
+ * 카운터 값의 증가 및 감소 기능을 제공합니다.
+ */
 public class SharedCounter {
+    /** 현재 카운트 값 */
     private long count;
 
-    public SharedCounter(){
-        count =0l;
+            /**
+             * 기본 생성자: 카운터를 0으로 초기화합니다.
+             */
+            public SharedCounter() {
+        count = 0L;
     }
 
-    public SharedCounter(long count) {
-        //TODO#1-1 생성자를 초기화 합니다. count < 0 IllegalArgumentException아 발생 합니다.
+            /**
+             * 지정된 값으로 카운터를 초기화하는 생성자
+             * 
+             * @param count 초기 카운트 값
+             * @throws IllegalArgumentException 카운트가 0 미만인 경우
+             */
+            public SharedCounter(long count) {
+        //TODO#1-1 생성자를 초기화합니다. count가 0 미만이면 IllegalArgumentException을 발생시킵니다.
 
-        this.count = 0l;
+        this.count = 0L;
 
     }
 
-    public long getCount(){
-        //TODO#1-2 count 를 반환 합니다.
+            /**
+             * 현재 카운트 값을 반환합니다.
+             * 
+             * @return 현재 카운트 값
+             */
+            public long getCount() {
+        //TODO#1-2 count를 반환합니다.
 
-        return 0l;
+        return 0L;
     }
 
-    public long increaseAndGet(){
-        //TODO#1-3 count = count + 1 증가시키고 count를 반환 합니다.
+            /**
+             * 카운트 값을 1 증가시키고 증가된 값을 반환합니다.
+             * 
+             * @return 증가된 카운트 값
+             */
+            public long increaseAndGet() {
+        //TODO#1-3 count를 1 증가시키고(count = count + 1) 증가된 count를 반환합니다.
 
-        return 0l;
+        return 0L;
     }
 
-    public long decreaseAndGet(){
-        //TODO#1-4 count = count-1 감소시키고 count를 반환 합니다.
+            /**
+             * 카운트 값을 1 감소시키고 감소된 값을 반환합니다.
+             * 
+             * @return 감소된 카운트 값
+             */
+            public long decreaseAndGet() {
+        //TODO#1-4 count를 1 감소시키고(count = count - 1) 감소된 count를 반환합니다.
 
-        return 0l;
+        return 0L;
     }
 }
