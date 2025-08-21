@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -22,11 +22,11 @@ public class App
 {
     public static void main( String[] args ){
 
-        //TODO#6 현재 실행되고 있는 main thread의 이름을 my-thread로 설정 합니다.
-        //참고.main thread : Thread.currentThread()
+        //TODO#6 현재 실행 중인 메인 스레드의 이름을 "my-thread"로 설정합니다.
+        //참고: 메인 스레드는 Thread.currentThread()로 접근할 수 있습니다.
         Thread main = Thread.currentThread();
 
-        //TODO#7 Counter 생성, countMaxSize는 10으로 설정 후 run method를 호출 합니다.
+        //TODO#7 Counter 객체를 생성하고, countMaxSize 값을 10으로 설정한 후 run 메소드를 호출합니다.
 
     }
 }
