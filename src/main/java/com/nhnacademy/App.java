@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -16,20 +16,30 @@ import com.nhnacademy.count.SharedCounter;
 import com.nhnacademy.thread.CounterIncreaseHandler;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 공유 카운터를 사용하는 스레드 작업 예제 애플리케이션
+ */
 @Slf4j
 public class App 
 {
 
+    /**
+     * 애플리케이션의 진입점
+     * 공유 카운터를 사용하는 스레드 작업을 시연합니다.
+     * 
+     * @param args 명령행 인자(사용하지 않음)
+     */
     public static void main( String[] args )
     {
+        // 메인 스레드의 우선순위를 최대로 설정합니다.
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 
-        //shardCounter 객체를 0으로 초기화 합니다.
-        SharedCounter sharedCounter = new SharedCounter(0l);
+        // SharedCounter 객체를 0으로 초기화합니다.
+        SharedCounter sharedCounter = new SharedCounter(0L);
 
-        //counterIncreaseHandler 객체를 생성 합니다.
+        // CounterIncreaseHandler 객체를 생성합니다.
         CounterIncreaseHandler counterIncreaseHandler = new CounterIncreaseHandler(sharedCounter);
-        //counterIncreaseHandler를 이용해서 threadA를 생성 합니다.
+        // counterIncreaseHandler를 이용하여 threadA를 생성합니다.
         Thread threadA = new Thread(counterIncreaseHandler);
         //threadA의 thread name을 "thread-A"로 설정 합니다.
         threadA.setName("thread-A");
