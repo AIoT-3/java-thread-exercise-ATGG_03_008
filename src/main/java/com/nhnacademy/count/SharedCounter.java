@@ -14,45 +14,82 @@ package com.nhnacademy.count;
 
 import java.util.concurrent.Semaphore;
 
+/**
+ * 여러 스레드에서 공유하여 사용하는 카운터 클래스
+ * 세마포어를 사용하여 스레드 안전성을 보장합니다.
+ */
 public class SharedCounter {
+    /** 현재 카운트 값 */
     private long count;
+
+    /** 스레드 동기화를 위한 세마포어 */
     private Semaphore semaphore;
 
-    public SharedCounter(){
-        count =0l;
+            /**
+             * 기본 생성자
+             * 카운터를 0으로 초기화합니다.
+             */
+            public SharedCounter() {
+        count = 0L;
     }
 
-    public SharedCounter(long count) {
-        if(count <0){
-            throw new IllegalArgumentException("count > 0 ");
+            /**
+             * 지정된 값으로 카운터를 초기화하는 생성자
+             *
+             * @param count 초기 카운트 값
+             * @throws IllegalArgumentException 카운트가 0 미만인 경우
+             */
+            public SharedCounter(long count) {
+        if(count < 0) {
+            throw new IllegalArgumentException("카운트는 0 이상이어야 합니다.");
         }
         this.count = count;
-        //TODO#1-1 semaphore를 생성 합니다.( 동시에 하나의 Thread만 접근할 수 있습니다. ), permits prameter를 확인하세요.
+        //TODO#1-1 세마포어를 생성합니다. (동시에 하나의 스레드만 접근할 수 있도록 permits 매개변수를 설정하세요.)
         semaphore = null;
     }
 
-    public long getCount(){
-        /*TODO#1-2 count 를 반환 합니다.
-            semaphore.acquire()를 호출하여 허가를 획득 합니다.
-            쓰레드가 작업이 완료되면
-            semaphore.release()를 호출하여
-            허가를 반환 합니다.
+            /**
+             * 현재 카운트 값을 반환합니다.
+             * 세마포어를 사용하여 스레드 안전성을 보장합니다.
+             *
+             * @return 현재 카운트 값
+             * @throws InterruptedException 스레드가 인터럽트된 경우
+             */
+            public long getCount() {
+        /*TODO#1-2 count를 반환합니다.
+            1. semaphore.acquire()를 호출하여 허가를 획득합니다.
+            2. 필요한 작업을 수행합니다.
+            3. 작업이 완료되면 semaphore.release()를 호출하여 허가를 반환합니다.
          */
 
         return count;
     }
 
-    public long increaseAndGet(){
-        /* TODO#1-3 count = count + 1 증가시키고 count를 반환 합니다.
-           1-2 처럼 semaphore를 이용해서 동기화할 수 있도록 구현 합니다.
+            /**
+             * 카운트 값을 1 증가시키고 증가된 값을 반환합니다.
+             * 세마포어를 사용하여 스레드 안전성을 보장합니다.
+             *
+             * @return 증가된 카운트 값
+             * @throws InterruptedException 스레드가 인터럽트된 경우
+             */
+            public long increaseAndGet() {
+        /* TODO#1-3 카운트를 1 증가시키고(count = count + 1) 증가된 값을 반환합니다.
+           1-2와 같이 세마포어를 이용하여 동기화를 구현합니다.
         */
         count = count + 1;
         return count;
     }
 
-    public long decreaseAndGet(){
-        /*TODO#1-4 count = count-1 감소시키고 count를 반환 합니다.
-          1-2 처럼 semaphore를 이용해서 동기화할 수 있도록 구현 합니다.
+            /**
+             * 카운트 값을 1 감소시키고 감소된 값을 반환합니다.
+             * 세마포어를 사용하여 스레드 안전성을 보장합니다.
+             *
+             * @return 감소된 카운트 값
+             * @throws InterruptedException 스레드가 인터럽트된 경우
+             */
+            public long decreaseAndGet() {
+        /*TODO#1-4 카운트를 1 감소시키고(count = count - 1) 감소된 값을 반환합니다.
+          1-2와 같이 세마포어를 이용하여 동기화를 구현합니다.
         */
         count = count - 1;
         return count;
