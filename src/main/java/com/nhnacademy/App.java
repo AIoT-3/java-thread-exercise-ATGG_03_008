@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2025. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -15,42 +15,52 @@ package com.nhnacademy;
 import com.nhnacademy.thread.CounterHandler;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 두 개의 독립적인 카운터 스레드를 실행하는 애플리케이션
+ * 각 스레드의 상태를 모니터링하고 순차적으로 실행합니다.
+ */
 @Slf4j
 public class App
 {
+    /**
+     * 애플리케이션의 진입점
+     * 두 개의 CounterHandler를 생성하고 각각 별도의 스레드에서 실행합니다.
+     * 
+     * @param args 명령행 인자(사용하지 않음)
+     */
     public static void main( String[] args )
     {
-        //TODO#1 counterHandlerA 객체를 생성 합니다. countMaxSize : 10
+        //TODO#1 counterHandlerA 객체를 생성합니다. 최대 카운트 값(countMaxSize)을 10으로 설정합니다.
         CounterHandler counterHandlerA;
-        //TODO#2 threadA 생성시 counterHandlerA 객체를 paramter로 전달 합니다.
+        //TODO#2 threadA 생성 시 counterHandlerA 객체를 생성자 매개변수로 전달합니다.
         Thread threadA;
-        //TODO#3 threadA의 name을 'my-counter-A' 로 설정 합니다.
+        //TODO#3 threadA의 이름을 'my-counter-A'로 설정합니다.
 
-        log.debug("threadA-state:{}",threadA.getState());
+        log.debug("threadA 상태: {}", threadA.getState());
 
 
-        //TODO#4 counterHandlerB 객체를 생성 합니다. countMaxSize : 10
+        //TODO#4 counterHandlerB 객체를 생성합니다. 최대 카운트 값(countMaxSize)을 10으로 설정합니다.
         CounterHandler counterHandlerB;
-        //TODO#5 threadB 생성시 counterHandlerB 객체를 paramter로 전달 합니다.
+        //TODO#5 threadB 생성 시 counterHandlerB 객체를 생성자 매개변수로 전달합니다.
         Thread threadB;
-        //TODO#6 threadB의 name을 'my-counter-B' 로 설정 합니다.
+        //TODO#6 threadB의 이름을 'my-counter-B'로 설정합니다.
 
-        log.debug("threadB-state:{}",threadB.getState());
+        log.debug("threadB 상태: {}", threadB.getState());
 
-        //TODO#7 threadA를 시작 합니다.
+        //TODO#7 threadA의 start() 메소드를 호출하여 스레드를 실행합니다.
 
 
-        //TODO#8 threadA 작업이 완료될 때까지 main Thread는 대기 합니다.
+        //TODO#8 threadA 작업이 완료될 때까지 메인 스레드가 대기하도록 합니다.
 
-        log.debug("threadA-state:{}",threadA.getState());
+        log.debug("threadA 상태: {}", threadA.getState());
 
-        //TODO#9 threadB를 시작 합니다.
+        //TODO#9 threadB의 start() 메소드를 호출하여 스레드를 실행합니다.
 
-        //TODO#10 threadB 작업이 완료될 때까지 main Thread는 대기 합니다.
+        //TODO#10 threadB 작업이 완료될 때까지 메인 스레드가 대기하도록 합니다.
 
-        log.debug("threadB-state:{}",threadB.getState());
+        log.debug("threadB 상태: {}", threadB.getState());
 
-        //TODO#11 'Application exit!' message를 출력 합니다.
+        //TODO#11 'Application exit!' 메시지를 출력합니다.
 
     }
 }
