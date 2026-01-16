@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -21,11 +21,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        //TODO#5 CounterThread 객체를 생성합니다.
+        // TODO #5 CounterThread 객체를 생성합니다.
         // 스레드 이름: "my-counter", 최대 카운트 값: 10
         CounterThread counterThread;
 
-        //TODO#6 counterThread의 start() 메소드를 호출하여 스레드를 실행합니다.
+        // TODO #6 counterThread의 start() 메서드를 호출하여 스레드를 실행합니다.
 
     }
 }
