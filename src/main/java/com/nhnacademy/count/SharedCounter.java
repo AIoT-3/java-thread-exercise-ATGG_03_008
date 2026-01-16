@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -34,7 +34,7 @@ public class SharedCounter {
              * @throws IllegalArgumentException 카운트가 0 미만인 경우
              */
             public SharedCounter(long count) {
-        //TODO#1-1 생성자를 초기화합니다. count가 0 미만이면 IllegalArgumentException을 발생시킵니다.
+        // TODO #1-1 생성자를 초기화합니다. count가 0 미만이면 IllegalArgumentException을 발생시킵니다.
 
         this.count = 0L;
 
@@ -46,7 +46,7 @@ public class SharedCounter {
              * @return 현재 카운트 값
              */
             public long getCount() {
-        //TODO#1-2 count를 반환합니다.
+        // TODO #1-2 count를 반환합니다.
 
         return 0L;
     }
@@ -57,7 +57,7 @@ public class SharedCounter {
              * @return 증가된 카운트 값
              */
             public long increaseAndGet() {
-        //TODO#1-3 count를 1 증가시키고(count = count + 1) 증가된 count를 반환합니다.
+        // TODO #1-3 count를 1 증가시키고(count = count + 1) 증가된 count를 반환합니다.
 
         return 0L;
     }
@@ -68,7 +68,7 @@ public class SharedCounter {
              * @return 감소된 카운트 값
              */
             public long decreaseAndGet() {
-        //TODO#1-4 count를 1 감소시키고(count = count - 1) 감소된 count를 반환합니다.
+        // TODO #1-4 count를 1 감소시키고(count = count - 1) 감소된 count를 반환합니다.
 
         return 0L;
     }

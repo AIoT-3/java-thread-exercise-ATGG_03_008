@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -33,7 +33,7 @@ public class CounterIncreaseHandler implements Runnable {
              * @throws IllegalArgumentException sharedCounter가 null인 경우
              */
             public CounterIncreaseHandler(SharedCounter sharedCounter) {
-        //TODO#2-1 sharedCounter를 초기화합니다. sharedCounter가 null이면 IllegalArgumentException을 발생시킵니다.
+        // TODO #2-1 sharedCounter를 초기화합니다. sharedCounter가 null이면 IllegalArgumentException을 발생시킵니다.
         this.sharedCounter = null;
     }
 
@@ -44,18 +44,18 @@ public class CounterIncreaseHandler implements Runnable {
      */
     @Override
     public void run() {
-        //TODO#2-2 현재 스레드의 interrupted 상태가 true이면 종료하도록 while 조건을 설정합니다.
-        while(true/* whlie 조건을 수정 하세요!*/) {
+        // TODO #2-2 현재 스레드의 interrupted 상태가 true이면 종료하도록 while 조건을 설정합니다.
+        while (true /* while 조건을 수정하세요! */) {
             try {
                 Thread.sleep(1000);
-                //TODO#2-3 sharedCounter의 카운트를 1 증가시키고 증가된 값을 반환받습니다.
+                // TODO #2-3 sharedCounter의 카운트를 1 증가시키고 증가된 값을 반환받습니다.
                 long count = 0L;
 
                 log.debug("스레드: {}, 카운트: {}", Thread.currentThread().getName(), count);
             } catch (Exception e) {
                 log.debug("스레드: {} - 인터럽트 발생!", Thread.currentThread().getName());
 
-                //TODO#2-4 현재 스레드에 interrupt()를 호출하여 인터럽트를 발생시킵니다. 이로 인해 스레드의 interrupted 상태가 true로 변경되어 while 문이 종료됩니다.
+                // TODO #2-4 현재 스레드에 interrupt()를 호출하여 인터럽트를 발생시킵니다. 이로 인해 스레드의 interrupted 상태가 true로 변경되어 while 문이 종료됩니다.
 
             }
         }
