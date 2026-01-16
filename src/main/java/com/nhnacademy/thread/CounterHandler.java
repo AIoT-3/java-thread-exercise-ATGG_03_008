@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -30,17 +30,17 @@ public class CounterHandler implements Runnable  {
      * @throws IllegalArgumentException 최대값이 0 이하이거나 모니터가 null인 경우
      */
     public CounterHandler(long countMaxSize, Object monitor) {
-        //TODO#4 countMaxSize가 0 이하이거나 monitor 객체가 null이면 IllegalArgumentException을 발생시킵니다.
+        // TODO #4 countMaxSize가 0 이하이거나 monitor 객체가 null이면 IllegalArgumentException을 발생시킵니다.
 
 
-        //TODO#5 countMaxSize, count, monitor 변수를 초기화합니다.
+        // TODO #5 countMaxSize, count, monitor 변수를 초기화합니다.
 
     }
 
     @Override
     public void run() {
-        //TODO#6 Thread에 의해서 run() method가 호출되면 무한 대기 합니다. monitor객체를 이용해서 구현하세요
-        //monitor는 여러 Thread가 동시에 접근할 수 없도록  접근을 제어해야 합니다.
+        // TODO #6 Thread에 의해서 run() 메서드가 호출되면 무한 대기합니다. monitor 객체를 이용해서 구현하세요
+        // monitor는 여러 Thread가 동시에 접근할 수 없도록 접근을 제어해야 합니다.
 
 
         do {
@@ -50,8 +50,8 @@ public class CounterHandler implements Runnable  {
                 throw new RuntimeException(e);
             }
             count++;
-            log.debug("thread:{},state:{},count:{}",Thread.currentThread().getName(),Thread.currentThread().getState(),count);
+            log.debug("thread:{}, state:{}, count:{}", Thread.currentThread().getName(), Thread.currentThread().getState(), count);
 
-        }while (count<countMaxSize);
+        } while (count < countMaxSize);
     }
 }
