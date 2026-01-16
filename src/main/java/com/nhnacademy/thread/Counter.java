@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -24,12 +24,12 @@ public class Counter {
 
     public Counter(long countMaxSize) {
 
-        if(countMaxSize <=0){
+        if (countMaxSize <= 0) {
             throw new IllegalArgumentException();
         }
 
         this.countMaxSize = countMaxSize;
-        this.count = 0l;
+        this.count = 0L;
     }
 
     public void run() {
@@ -40,7 +40,7 @@ public class Counter {
                 throw new RuntimeException(e);
             }
             count++;
-            log.debug("name:{},count:{}",Thread.currentThread().getName(),count);
-        }while (count<countMaxSize);
+            log.debug("name:{}, count:{}", Thread.currentThread().getName(), count);
+        } while (count < countMaxSize);
     }
 }

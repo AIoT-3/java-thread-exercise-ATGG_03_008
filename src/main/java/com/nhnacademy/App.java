@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -20,7 +20,7 @@ import com.nhnacademy.thread.Counter;
  */
 public class App {
     public static void main(String[] args) {
-        //TODO#5 - AlertDaemon 스레드 객체를 생성하고 start() 메서드를 호출하여 실행합니다.
+        // TODO#5 - AlertDaemon 스레드 객체를 생성하고 start() 메서드를 호출하여 실행합니다.
         AlertDaemon alertDaemon = null;
 
         Thread.currentThread().setName("my-thread");
