@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2024. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -18,17 +18,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class App
 {
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
-        CounterHandler counterHandler = new CounterHandler(10l);
+        CounterHandler counterHandler = new CounterHandler(10L);
         Thread thread = new Thread(counterHandler);
-        log.debug("thread-state:{}",thread.getState());
+        log.debug("thread-state:{}", thread.getState());
         thread.setName("my-counter");
         thread.start();
-        //TODO#1 thread가 실행 후 (1-10 count 증가 후  아래 로그가 출력 됩니다.)
-        //thread.join()을 호출 하면 thread가 종료될 때 까지 main thread가 대기하게 됩니다.
+        // TODO #1 thread가 실행 후 (1-10 count 증가 후 아래 로그가 출력됩니다.)
+        // thread.join()을 호출하면 thread가 종료될 때까지 main thread가 대기하게 됩니다.
 
         log.debug("Application exit!");
-        log.debug("thread-state:{}",thread.getState());
+        log.debug("thread-state:{}", thread.getState());
     }
 }
