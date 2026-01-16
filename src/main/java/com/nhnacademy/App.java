@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -46,16 +46,16 @@ public class App
         threadB.setName("my-counter-B");
         log.debug("threadB 상태: {}", threadB.getState());
 
-        // threadA의 start() 메소드를 호출하여 스레드를 실행합니다.
+        // threadA의 start() 메서드를 호출하여 스레드를 실행합니다.
         threadA.start();
         log.debug("threadA 상태: {}", threadA.getState());
 
-        // threadB의 start() 메소드를 호출하여 스레드를 실행합니다.
+        // threadB의 start() 메서드를 호출하여 스레드를 실행합니다.
         threadB.start();
         log.debug("threadB 상태: {}", threadB.getState());
 
-        //TODO#1 메인 스레드가 threadA, threadB가 종료될 때까지 대기합니다. Thread.yield()를 사용합니다.
-        
+        // TODO #1 메인 스레드가 threadA, threadB가 종료될 때까지 대기합니다. Thread.yield()를 사용합니다.
+
         // threadA, threadB가 종료되면 'Application exit!' 메시지를 출력합니다.
         log.debug("Application exit!");
 

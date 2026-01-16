@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -26,7 +26,7 @@ public class CounterHandler implements Runnable  {
         }
 
         this.countMaxSize = countMaxSize;
-        this.count=0l;
+        this.count = 0L;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class CounterHandler implements Runnable  {
             }
             count++;
             log.debug("스레드: {}, 상태: {}, 카운트: {}", Thread.currentThread().getName(), Thread.currentThread().getState(), count);
-            //TODO#2 Thread.yield()를 사용하여 현재 수행 중인 작업을 다른 스레드에게 양보하세요.
+            // TODO #2 Thread.yield()를 사용하여 현재 수행 중인 작업을 다른 스레드에게 양보하세요.
 
         } while (count < countMaxSize);
     }
