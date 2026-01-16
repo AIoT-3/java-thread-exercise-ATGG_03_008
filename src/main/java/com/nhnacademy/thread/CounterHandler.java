@@ -1,6 +1,6 @@
 /*
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * + Copyright 2025. NHN Academy Corp. All rights reserved.
+ * + Copyright 2026. NHN Academy Corp. All rights reserved.
  * + * While every precaution has been taken in the preparation of this resource,  assumes no
  * + responsibility for errors or omissions, or for damages resulting from the use of the information
  * + contained herein
@@ -57,7 +57,7 @@ public class CounterHandler implements Runnable {
                 throw new RuntimeException("스레드가 인터럽트되었습니다.", e);
             }
 
-        //TODO#2 현재 스레드의 isInterrupted() 상태가 false일 때만 반복문을 실행하도록 조건을 추가하세요.
+        // TODO #2 현재 스레드의 isInterrupted() 상태가 false일 때만 반복문을 실행하도록 조건을 추가하세요.
         } while (count < countMaxSize);
 
     }
