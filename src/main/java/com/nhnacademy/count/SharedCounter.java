@@ -47,7 +47,7 @@ public class SharedCounter {
                  /* TODO #1-1 ReentrantLock을 생성합니다. (mutex는 동시에 하나의 스레드만 접근할 수 있도록 합니다.)
            ReentrantLock은 기본적으로 비공정한 락입니다. 공정성을 보장하도록 true 매개변수를 사용하여 초기화합니다.
          */
-        mutex = null;
+        mutex = new ReentrantLock(true);
     }
 
             /**
@@ -63,7 +63,15 @@ public class SharedCounter {
             3. 작업이 완료되면 mutex.unlock()을 호출하여 잠금을 해제합니다.
                주의: 뮤텍스는 락을 획득한 스레드만 락을 해제할 수 있습니다.
          */
-        return count;
+
+                mutex.lock();
+                try{
+                    return count;
+                }finally {
+                    mutex.unlock();
+                }
+
+
     }
 
             /**
@@ -76,8 +84,15 @@ public class SharedCounter {
         /* TODO #1-3 카운트를 1 증가시키고(count = count + 1) 증가된 값을 반환합니다.
            1-2와 같이 mutex를 이용하여 동기화를 구현합니다.
         */
-        count = count + 1;
-        return count;
+
+                mutex.lock();
+                try{
+                    count = count + 1;
+                    return count;
+                }finally {
+                    mutex.unlock();
+                }
+
     }
 
             /**
@@ -90,7 +105,13 @@ public class SharedCounter {
         /* TODO #1-4 카운트를 1 감소시키고(count = count - 1) 감소된 값을 반환합니다.
           1-2와 같이 mutex를 이용하여 동기화를 구현합니다.
         */
-        count = count - 1;
-        return count;
-    }
+                mutex.lock();
+                try{
+                    count = count - 1;
+                    return count;
+                }finally {
+                    mutex.unlock();
+                }
+
+            }
 }
