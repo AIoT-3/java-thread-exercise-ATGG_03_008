@@ -20,35 +20,42 @@ import lombok.extern.slf4j.Slf4j;
 public class App 
 {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws InterruptedException {
 
         // TODO #1 SharedCounter 객체를 0으로 초기화합니다.
-        SharedCounter sharedCounter = null;
+        SharedCounter sharedCounter = new SharedCounter(0);
 
         // TODO #2 CounterIncreaseHandler 객체를 생성합니다.
-        CounterIncreaseHandler counterIncreaseHandler = null;
+        CounterIncreaseHandler counterIncreaseHandler = new CounterIncreaseHandler(sharedCounter);
 
         // TODO #3 counterIncreaseHandler를 이용하여 threadA를 생성합니다.
-        Thread threadA = null;
+        Thread threadA = new Thread(counterIncreaseHandler);
 
         // TODO #4 threadA의 이름을 "thread-A"로 설정합니다.
 
+        threadA.setName("thread-A");
+
         // TODO #5 threadA의 start() 메서드를 호출하여 스레드를 실행합니다.
 
+        threadA.start();
 
         // TODO #6 counterIncreaseHandler를 이용하여 threadB를 생성합니다.
-        Thread threadB = null;
+        Thread threadB = new Thread(counterIncreaseHandler);
 
         // TODO #7 threadB의 이름을 'thread-B'로 설정합니다.
+        threadB.setName("thread-B");
 
         // TODO #8 threadB의 start() 메서드를 호출하여 스레드를 실행합니다.
-
+        threadB.start();
         // TODO #9 main 스레드가 실행 20초 후 threadA, threadB가 종료될 수 있도록 인터럽트를 발생시킵니다.
-
+        Thread.sleep(20_000);
+        threadA.interrupt();
+        threadB.interrupt();
 
         // TODO #10 main 스레드는 threadA와 threadB의 상태가 TERMINATED가 될 때까지 대기합니다. 즉 threadA, threadB가 종료될 때까지 대기(양보)합니다.
-
+        while (threadA.isAlive() || threadB.isAlive()) {
+            Thread.yield();
+        }
 
         log.debug("System exit!");
     }

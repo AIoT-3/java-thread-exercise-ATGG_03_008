@@ -34,7 +34,10 @@ public class CounterIncreaseHandler implements Runnable {
              */
             public CounterIncreaseHandler(SharedCounter sharedCounter) {
         // TODO #2-1 sharedCounter를 초기화합니다. sharedCounter가 null이면 IllegalArgumentException을 발생시킵니다.
-        this.sharedCounter = null;
+        if(sharedCounter == null){
+            throw new IllegalArgumentException();
+        }
+        this.sharedCounter = sharedCounter;
     }
 
     /**
@@ -45,18 +48,17 @@ public class CounterIncreaseHandler implements Runnable {
     @Override
     public void run() {
         // TODO #2-2 현재 스레드의 interrupted 상태가 true이면 종료하도록 while 조건을 설정합니다.
-        while (true /* while 조건을 수정하세요! */) {
+        while (!Thread.interrupted()) {
             try {
                 Thread.sleep(1000);
                 // TODO #2-3 sharedCounter의 카운트를 1 증가시키고 증가된 값을 반환받습니다.
-                long count = 0L;
-
+                long count = sharedCounter.increaseAndGet();
                 log.debug("스레드: {}, 카운트: {}", Thread.currentThread().getName(), count);
             } catch (Exception e) {
                 log.debug("스레드: {} - 인터럽트 발생!", Thread.currentThread().getName());
 
                 // TODO #2-4 현재 스레드에 interrupt()를 호출하여 인터럽트를 발생시킵니다. 이로 인해 스레드의 interrupted 상태가 true로 변경되어 while 문이 종료됩니다.
-
+                Thread.currentThread().interrupt();
             }
         }
     }

@@ -36,7 +36,7 @@ public class SharedCounter {
             public SharedCounter(long count) {
         // TODO #1-1 생성자를 초기화합니다. count가 0 미만이면 IllegalArgumentException을 발생시킵니다.
 
-        this.count = 0L;
+        this.count = count;
 
     }
 
@@ -48,7 +48,7 @@ public class SharedCounter {
             public long getCount() {
         // TODO #1-2 count를 반환합니다.
 
-        return 0L;
+        return this.count;
     }
 
             /**
@@ -59,7 +59,7 @@ public class SharedCounter {
             public long increaseAndGet() {
         // TODO #1-3 count를 1 증가시키고(count = count + 1) 증가된 count를 반환합니다.
 
-        return 0L;
+        return count++;
     }
 
             /**
@@ -70,6 +70,6 @@ public class SharedCounter {
             public long decreaseAndGet() {
         // TODO #1-4 count를 1 감소시키고(count = count - 1) 감소된 count를 반환합니다.
 
-        return 0L;
+        return count--;
     }
 }
