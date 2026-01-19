@@ -18,8 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class App
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws InterruptedException {
         CounterHandler counterHandler = new CounterHandler(10L);
         Thread thread = new Thread(counterHandler);
         log.debug("thread-state:{}", thread.getState());
@@ -27,7 +26,7 @@ public class App
         thread.start();
         // TODO #1 thread가 실행 후 (1-10 count 증가 후 아래 로그가 출력됩니다.)
         // thread.join()을 호출하면 thread가 종료될 때까지 main thread가 대기하게 됩니다.
-
+        thread.join();
         log.debug("Application exit!");
         log.debug("thread-state:{}", thread.getState());
     }
