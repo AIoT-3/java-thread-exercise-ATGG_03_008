@@ -28,8 +28,7 @@ public class App
      * 
      * @param args 명령행 인자(사용하지 않음)
      */
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws InterruptedException {
         // CounterHandler 객체를 생성합니다. 최대 카운트 값(countMaxSize)을 10으로 설정합니다.
         CounterHandler counterHandlerA = new CounterHandler(10L);
         // threadA 생성 시 counterHandlerA 객체를 생성자 매개변수로 전달합니다.
@@ -55,7 +54,8 @@ public class App
         log.debug("threadB 상태: {}", threadB.getState());
 
         // TODO #1 메인 스레드가 threadA, threadB가 종료될 때까지 대기합니다. Thread.yield()를 사용합니다.
-
+        while(threadA.isAlive() || threadB.isAlive())
+            Thread.yield();
         // threadA, threadB가 종료되면 'Application exit!' 메시지를 출력합니다.
         log.debug("Application exit!");
 
