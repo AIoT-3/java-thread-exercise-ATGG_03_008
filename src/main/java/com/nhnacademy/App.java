@@ -23,9 +23,9 @@ public class App
     {
         // TODO #5 CounterThread 객체를 생성합니다.
         // 스레드 이름: "my-counter", 최대 카운트 값: 10
-        CounterThread counterThread;
-
+        CounterThread counterThread = new CounterThread("my-counter",10);
         // TODO #6 counterThread의 start() 메서드를 호출하여 스레드를 실행합니다.
+        counterThread.start();
 
     }
 }
