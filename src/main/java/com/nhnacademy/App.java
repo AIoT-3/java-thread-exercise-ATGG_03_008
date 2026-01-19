@@ -22,15 +22,15 @@ public class App
     public static void main(String[] args)
     {
         // TODO #4 CounterHandler 객체를 생성합니다. 최대 카운트 값(countMaxSize)을 10으로 설정합니다.
-        CounterHandler counterHandler;
+        CounterHandler counterHandler = new CounterHandler(10);
 
         // TODO #5 Thread 객체 생성 시 counterHandler 객체를 생성자 매개변수로 전달합니다.
-        Thread thread;
+        Thread thread = new Thread(counterHandler);
 
         // TODO #6 생성된 thread의 이름을 "my-counter"로 설정합니다.
-
+        thread.setName("my-counter");
 
         // TODO #7 thread의 start() 메서드를 호출하여 스레드를 실행합니다.
-
+        thread.start();
     }
 }
