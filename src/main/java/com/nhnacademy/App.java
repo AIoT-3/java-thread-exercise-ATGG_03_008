@@ -53,8 +53,9 @@ public class App
         log.debug("threadA 상태: {}", threadA.getState());
 
         // TODO #3 메인 스레드에서 2초 후 monitor 객체를 이용하여 대기 중인 threadA를 깨웁니다.
+        Thread.sleep(2000);
         synchronized (monitor) {
-            monitor.wait(2000);
+            monitor.notifyAll();
         }
 
         // 메인 스레드가 threadA가 종료될 때까지 대기합니다. Thread.yield()를 사용합니다.
