@@ -60,8 +60,8 @@ public class SharedCounter {
         // TODO #1-4 카운트 감소 연산(count = count - 1) 부분에만 락을 걸고, 감소된 값을 반환합니다.
                 synchronized (this) {
                     count = count - 1;
-                    return count;
-                }
 
+                }
+                return count;
     }
 }
