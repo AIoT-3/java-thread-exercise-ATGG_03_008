@@ -49,7 +49,7 @@ public class CounterHandler implements Runnable  {
         do {
             try {
                 synchronized (monitor){
-                    monitor.wait(1000);
+                    monitor.wait();
                 }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
